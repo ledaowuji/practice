@@ -7,15 +7,16 @@ function test_deammon()
 {
     child_deamon &
     ERR=$?
+    pid=$!
     echo $ERR    
-    wait
+    wait $pid
     ERR=$?
     echo $ERR
 }
 
 function child_deamon()
 {
-    sleep 10
+    sleep 1
     echo "test child"
     return 1
 }
